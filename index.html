@@ -340,16 +340,17 @@
     <script>
         let currentImage = null;
         let currentAnalysis = null;
-        let apiKey = null;
+        let apiKey = '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';
 
         // API Key aus localStorage laden
         window.onload = function() {
             const savedKey = localStorage.getItem('anthropicApiKey');
             if (savedKey) {
                 apiKey = savedKey;
-                document.getElementById('apiKeySection').classList.add('hidden');
-                document.getElementById('uploadSection').classList.remove('hidden');
             }
+            // API Key Section ausblenden und Upload anzeigen, da Key bereits gesetzt
+            document.getElementById('apiKeySection').classList.add('hidden');
+            document.getElementById('uploadSection').classList.remove('hidden');
         };
 
         function saveApiKey() {
